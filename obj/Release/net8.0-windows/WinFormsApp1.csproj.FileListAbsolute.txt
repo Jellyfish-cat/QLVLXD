@@ -494,3 +494,4 @@ D:\download\ThucHanhLTQL\ThucHanhLTQL\WinFormsApp1\obj\Release\net8.0-windows\re
 D:\download\ThucHanhLTQL\ThucHanhLTQL\WinFormsApp1\obj\Release\net8.0-windows\WinFormsApp1.pdb
 D:\download\ThucHanhLTQL\ThucHanhLTQL\WinFormsApp1\obj\Release\net8.0-windows\WinFormsApp1.genruntimeconfig.cache
 D:\download\ThucHanhLTQL\ThucHanhLTQL\WinFormsApp1\obj\Release\net8.0-windows\ref\WinFormsApp1.dll
+D:\WinFormsApp1\obj\Release\net8.0-windows\WinFormsApp1.sourcelink.json
