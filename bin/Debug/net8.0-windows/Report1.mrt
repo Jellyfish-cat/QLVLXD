@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+	<Dictionary Ref="1" type="Dictionary" isKey="true">
+		<BusinessObjects isList="true" count="0" />
+		<Databases isList="true" count="1">
+			<QLVLXDataSet Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+				<Alias>QLVLXDataSet</Alias>
+				<ConnectionStringEncrypted>n+bP4MV7w+1pRujEw0mqFtFqz0hIVw==</ConnectionStringEncrypted>
+				<Name>QLVLXDataSet</Name>
+			</QLVLXDataSet>
+		</Databases>
+		<DataSources isList="true" count="1">
+			<DanhSachSanPham Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+				<Alias>DanhSachSanPham</Alias>
+				<Columns isList="true" count="10">
+					<value>ID,System.Int32</value>
+					<value>HangSanXuatID,System.Int32</value>
+					<value>TenHangSanXuat,System.String</value>
+					<value>DanhMucID,System.Int32</value>
+					<value>TenDanhMuc,System.String</value>
+					<value>TenSanPham,System.String</value>
+					<value>Gia,System.Int32</value>
+					<value>SoLuong,System.Int32</value>
+					<value>HinhAnh,System.String</value>
+					<value>MoTa,System.String</value>
+				</Columns>
+				<CommandTimeout>30</CommandTimeout>
+				<Dictionary isRef="1" />
+				<Key>89a8a3cbb05e4f32b553c45c2e0e1a9e</Key>
+				<Name>DanhSachSanPham</Name>
+				<NameInSource>QLVLXDataSet</NameInSource>
+				<Parameters isList="true" count="0" />
+				<SqlCommand>/* Local Query */</SqlCommand>
+			</DanhSachSanPham>
+		</DataSources>
+		<Relations isList="true" count="0" />
+		<Report isRef="0" />
+		<Resources isList="true" count="0" />
+		<UserFunctions isList="true" count="0" />
+		<Variables isList="true" count="0" />
+	</Dictionary>
+	<EngineVersion>EngineV2</EngineVersion>
+	<GlobalizationStrings isList="true" count="0" />
+	<Key>1a1f94048b6340b28a4e6a400a94f096</Key>
+	<MetaTags isList="true" count="0" />
+	<Pages isList="true" count="1">
+		<Page1 Ref="4" type="Page" isKey="true">
+			<Border>None;Black;2;Solid;False;4;Black</Border>
+			<Brush>Transparent</Brush>
+			<Components isList="true" count="1">
+				<MainBand Ref="5" type="DataBand" isKey="true">
+					<Brush>Transparent</Brush>
+					<CanBreak>True</CanBreak>
+					<CanShrink>True</CanShrink>
+					<ClientRectangle>0,20,1377.94,121.08</ClientRectangle>
+					<Components isList="true" count="3">
+						<Textbox1 Ref="6" type="Text" isKey="true">
+							<Brush>Transparent</Brush>
+							<CanGrow>True</CanGrow>
+							<ClientRectangle>0,0,685.04,34.12</ClientRectangle>
+							<Conditions isList="true" count="0" />
+							<Expressions isList="true" count="0" />
+							<Font>Arial,16,Bold</Font>
+							<HorAlignment>Center</HorAlignment>
+							<Linked>True</Linked>
+							<Margins>2,2,2,2</Margins>
+							<Name>Textbox1</Name>
+							<Page isRef="4" />
+							<Parent isRef="5" />
+							<Text>THÔNG KÊ SẢN PHẨM</Text>
+							<TextBrush>Black</TextBrush>
+						</Textbox1>
+						<Textbox2 Ref="7" type="Text" isKey="true">
+							<Brush>Transparent</Brush>
+							<CanGrow>True</CanGrow>
+							<ClientRectangle>572.45,38.29,112.59,23.62</ClientRectangle>
+							<Conditions isList="true" count="0" />
+							<Expressions isList="true" count="0" />
+							<Font>Times New Roman,12</Font>
+							<Linked>True</Linked>
+							<Margins>2,2,2,2</Margins>
+							<Name>Textbox2</Name>
+							<Page isRef="4" />
+							<Parent isRef="5" />
+							<Text>{"Ngày lập: " &amp; Today}</Text>
+							<TextBrush>[0:0:0]</TextBrush>
+						</Textbox2>
+						<Tablix7 Ref="8" type="Panel" isKey="true">
+							<Brush>Transparent</Brush>
+							<CanBreak>True</CanBreak>
+							<CanGrow>True</CanGrow>
+							<ClientRectangle>0,73.83,688.98,47.24</ClientRectangle>
+							<Components isList="true" count="2">
+								<HeaderBand2 Ref="9" type="HeaderBand" isKey="true">
+									<Brush>Transparent</Brush>
+									<ClientRectangle>0,20,688.98,23.62</ClientRectangle>
+									<Components isList="true" count="7">
+										<Textbox48 Ref="10" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>0,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Textbox48</Name>
+											<Page isRef="4" />
+											<Parent isRef="9" />
+											<Text>STT</Text>
+											<TextBrush>Black</TextBrush>
+										</Textbox48>
+										<Textbox50 Ref="11" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>98.43,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Textbox50</Name>
+											<Page isRef="4" />
+											<Parent isRef="9" />
+											<Text>Hãng Sản Xuất</Text>
+											<TextBrush>Black</TextBrush>
+										</Textbox50>
+										<Textbox52 Ref="12" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>196.86,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Textbox52</Name>
+											<Page isRef="4" />
+											<Parent isRef="9" />
+											<Text>Danh Mục</Text>
+											<TextBrush>Black</TextBrush>
+										</Textbox52>
+										<Textbox54 Ref="13" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>295.29,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Textbox54</Name>
+											<Page isRef="4" />
+											<Parent isRef="9" />
+											<Text>Tên Sản Phẩm</Text>
+											<TextBrush>Black</TextBrush>
+										</Textbox54>
+										<Textbox56 Ref="14" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>393.72,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Textbox56</Name>
+											<Page isRef="4" />
+											<Parent isRef="9" />
+											<Text>Đơn Giá</Text>
+											<TextBrush>Black</TextBrush>
+										</Textbox56>
+										<Textbox58 Ref="15" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>492.15,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Textbox58</Name>
+											<Page isRef="4" />
+											<Parent isRef="9" />
+											<Text>Số Lượng</Text>
+											<TextBrush>Black</TextBrush>
+										</Textbox58>
+										<Textbox60 Ref="16" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>590.58,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Textbox60</Name>
+											<Page isRef="4" />
+											<Parent isRef="9" />
+											<Text>Thành Tiền</Text>
+											<TextBrush>Black</TextBrush>
+										</Textbox60>
+									</Components>
+									<Conditions isList="true" count="0" />
+									<Expressions isList="true" count="0" />
+									<Linked>True</Linked>
+									<Locked>True</Locked>
+									<Name>HeaderBand2</Name>
+									<Page isRef="4" />
+									<Parent isRef="8" />
+									<PrintIfEmpty>True</PrintIfEmpty>
+								</HeaderBand2>
+								<DataBand3 Ref="17" type="DataBand" isKey="true">
+									<Brush>Transparent</Brush>
+									<BusinessObjectGuid isNull="true" />
+									<ClientRectangle>0,83.62,688.98,23.62</ClientRectangle>
+									<Components isList="true" count="7">
+										<ID Ref="18" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>0,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Times New Roman,12</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>ID</Name>
+											<Page isRef="4" />
+											<Parent isRef="17" />
+											<Text>{Line}</Text>
+											<TextBrush>[0:0:0]</TextBrush>
+										</ID>
+										<TenHangSanXuat Ref="19" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>98.43,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>TenHangSanXuat</Name>
+											<Page isRef="4" />
+											<Parent isRef="17" />
+											<Text>{DanhSachSanPham.TenHangSanXuat}</Text>
+											<TextBrush>Black</TextBrush>
+										</TenHangSanXuat>
+										<TenDanhMuc Ref="20" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>196.86,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>TenDanhMuc</Name>
+											<Page isRef="4" />
+											<Parent isRef="17" />
+											<Text>{DanhSachSanPham.TenDanhMuc}</Text>
+											<TextBrush>Black</TextBrush>
+										</TenDanhMuc>
+										<TenSanPham Ref="21" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>295.29,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>TenSanPham</Name>
+											<Page isRef="4" />
+											<Parent isRef="17" />
+											<Text>{DanhSachSanPham.TenSanPham}</Text>
+											<TextBrush>Black</TextBrush>
+										</TenSanPham>
+										<Gia Ref="22" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>393.72,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Gia</Name>
+											<Page isRef="4" />
+											<Parent isRef="17" />
+											<Text>{DanhSachSanPham.Gia}</Text>
+											<TextBrush>Black</TextBrush>
+										</Gia>
+										<SoLuong Ref="23" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>492.15,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Arial,10</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>SoLuong</Name>
+											<Page isRef="4" />
+											<Parent isRef="17" />
+											<Text>{DanhSachSanPham.SoLuong}</Text>
+											<TextBrush>Black</TextBrush>
+										</SoLuong>
+										<Textbox61 Ref="24" type="Text" isKey="true">
+											<Border>Adv[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;[211:211:211];1;Solid;False;4;Black</Border>
+											<Brush>Transparent</Brush>
+											<CanGrow>True</CanGrow>
+											<ClientRectangle>590.58,0,98.43,23.62</ClientRectangle>
+											<Conditions isList="true" count="0" />
+											<Expressions isList="true" count="0" />
+											<Font>Times New Roman,12</Font>
+											<GrowToHeight>True</GrowToHeight>
+											<Linked>True</Linked>
+											<Margins>2,2,2,2</Margins>
+											<Name>Textbox61</Name>
+											<Page isRef="4" />
+											<Parent isRef="17" />
+											<Text>{DanhSachSanPham.SoLuong * DanhSachSanPham.Gia}</Text>
+											<TextBrush>[0:0:0]</TextBrush>
+											<Type>Expression</Type>
+										</Textbox61>
+									</Components>
+									<Conditions isList="true" count="0" />
+									<DataSourceName>DanhSachSanPham</DataSourceName>
+									<Expressions isList="true" count="0" />
+									<Filters isList="true" count="0" />
+									<Linked>True</Linked>
+									<Locked>True</Locked>
+									<Name>DataBand3</Name>
+									<Page isRef="4" />
+									<Parent isRef="8" />
+									<Sort isList="true" count="0" />
+								</DataBand3>
+							</Components>
+							<Conditions isList="true" count="0" />
+							<Expressions isList="true" count="0" />
+							<Linked>True</Linked>
+							<Name>Tablix7</Name>
+							<Page isRef="4" />
+							<Parent isRef="5" />
+						</Tablix7>
+					</Components>
+					<Conditions isList="true" count="0" />
+					<CountData>1</CountData>
+					<Expressions isList="true" count="0" />
+					<Filters isList="true" count="0" />
+					<Linked>True</Linked>
+					<Name>MainBand</Name>
+					<Page isRef="4" />
+					<Parent isRef="4" />
+					<Sort isList="true" count="0" />
+				</MainBand>
+			</Components>
+			<Conditions isList="true" count="0" />
+			<Expressions isList="true" count="0" />
+			<Guid>4b5b9d185d67407cb1fe94fed5679985</Guid>
+			<Margins>78.74,59.06,59.06,59.06</Margins>
+			<Name>Page1</Name>
+			<PageHeight>1169.29</PageHeight>
+			<PageWidth>826.77</PageWidth>
+			<PaperSize>Letter</PaperSize>
+			<Report isRef="0" />
+			<SegmentPerWidth>2</SegmentPerWidth>
+		</Page1>
+	</Pages>
+	<PrinterSettings Ref="25" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+	<ReferencedAssemblies isList="true" count="8">
+		<value>System.Dll</value>
+		<value>System.Drawing.Dll</value>
+		<value>System.Windows.Forms.Dll</value>
+		<value>System.Data.Dll</value>
+		<value>System.Xml.Dll</value>
+		<value>Stimulsoft.Controls.Dll</value>
+		<value>Stimulsoft.Base.Dll</value>
+		<value>Stimulsoft.Report.Dll</value>
+	</ReferencedAssemblies>
+	<ReportAlias>Report</ReportAlias>
+	<ReportChanged>4/20/2025 6:17:10 PM</ReportChanged>
+	<ReportCreated>4/20/2025 5:53:34 PM</ReportCreated>
+	<ReportFile>D:\download\ThucHanhLTQL\WinFormsApp1\Reports\rptThongKeSanPham.mrt</ReportFile>
+	<ReportGuid>1e44cc43f3f64fd18ec19860144588a0</ReportGuid>
+	<ReportName>Report</ReportName>
+	<ReportUnit>HundredthsOfInch</ReportUnit>
+	<ReportVersion>2025.2.2.0</ReportVersion>
+	<Script>
+		Imports Microsoft.VisualBasic
+		Imports System
+		Imports System.Drawing
+		Imports System.Windows.Forms
+		Imports System.Data
+		Imports Stimulsoft.Controls
+		Imports Stimulsoft.Base.Drawing
+		Imports Stimulsoft.Report
+		Imports Stimulsoft.Report.Dialogs
+		Imports Stimulsoft.Report.Components
+
+		Namespace Reports
+		Public Class Report
+		Inherits Stimulsoft.Report.StiReport
+
+		Public Sub New()
+		MyBase.New
+		Me.InitializeComponent
+		End Sub
+
+		Public Function DateAdd(Interval As Microsoft.VisualBasic.DateInterval, Number As Double, DateValue As String) As DateTime
+		Return DateAdd(Interval, Number, System.Convert.ToString(DateValue))
+		End Function
+		Protected Overloads Function Format(obj As Object) As string
+		Return obj.ToString()
+		End Function
+
+		#Region "StiReport Designer generated code - do not modify"
+		#End Region 'StiReport Designer generated code - do not modify
+		End Class
+		End Namespace
+	</Script>
+	<ScriptLanguage>VB</ScriptLanguage>
+	<Styles isList="true" count="0" />
+</StiSerializer>

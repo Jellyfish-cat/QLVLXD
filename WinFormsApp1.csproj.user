@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>D:\WinFormsApp1\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Reports\BieuDoDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reports\BieuDoSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\BanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\ChiTietPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\DanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\Flash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\HangSanXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\frmHoaDon_ChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\Helpa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\SanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\NhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\PhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form\Main2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reports\InHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reports\InPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reports\ThongKeDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Reports\ThongKeSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

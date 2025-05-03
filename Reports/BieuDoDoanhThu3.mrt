@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <CalculationMode>Interpretation</CalculationMode>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <DanhSachSanPham Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>DanhSachSanPham</Alias>
+        <ConnectionStringEncrypted>41ZpCU1dq3lqRjlY+VxpY4twm4NNWjpp8Wuh/WmcdxPGbL/LSEu6UWtcoXD/jCiL0RSRK9Vrc7z5E5zYZ8ykP4UMSQ9V</ConnectionStringEncrypted>
+        <Key>4b46afa7681d4629aa4fbd0cdd1a5d19</Key>
+        <Name>DanhSachSanPham</Name>
+      </DanhSachSanPham>
+    </Databases>
+    <DataSources isList="true" count="13">
+      <DanhSachSanPham Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>DanhSachSanPham</Alias>
+        <Columns isList="true" count="2">
+          <value>ORIGINAL,ThanhTien,ThanhTien,ThanhTien,System.Int32,_x0038_b4f1389e0fc4169b58014675c6897f5</value>
+          <value>ORIGINAL,NgayLap,NgayLap,NgayLap,System.DateTime,_x0037_a2eae35e1424ca5a4eacef454ebe501</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>07b9d04b6ca44162b41effba823e03d9</Key>
+        <Name>DanhSachSanPham</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+	CAST(hd.NgayLap AS DATE) AS NgayLap,
+	SUM(ctd.SoLuongBan * ctd.DonGiaBan) AS ThanhTien
+	FROM DonHang hd
+JOIN HoaDon_ChiTiet ctd ON hd.ID = ctd.DonHangID
+GROUP BY CAST(hd.NgayLap AS DATE)
+</SqlCommand>
+      </DanhSachSanPham>
+      <ChiTietPhieuNhap Ref="4" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>ChiTietPhieuNhap</Alias>
+        <Columns isList="true" count="5">
+          <value>ID,System.Int32</value>
+          <value>PhieuNhapID,System.Int32</value>
+          <value>SanPhamID,System.Int32</value>
+          <value>HangSanXuatID,System.Int32</value>
+          <value>SoLuongNhap,System.Int32</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>3f5250dbf9544692ac3c2d64214e68b5</Key>
+        <Name>ChiTietPhieuNhap</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from ChiTietPhieuNhap</SqlCommand>
+      </ChiTietPhieuNhap>
+      <DanhMuc Ref="5" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>DanhMuc</Alias>
+        <Columns isList="true" count="2">
+          <value>id,System.Int32</value>
+          <value>TenDanhMuc,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>4fdae328d77e43c3bb7c90e1ec74d550</Key>
+        <Name>DanhMuc</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from DanhMuc</SqlCommand>
+      </DanhMuc>
+      <NhaCungCap Ref="6" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>NhaCungCap</Alias>
+        <Columns isList="true" count="4">
+          <value>ID,System.Int32</value>
+          <value>TenNhaCungCap,System.String</value>
+          <value>DienThoai,System.String</value>
+          <value>DiaChi,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>666eec22ee89449a9ce0f827c0217215</Key>
+        <Name>NhaCungCap</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from NhaCungCap</SqlCommand>
+      </NhaCungCap>
+      <DonHang Ref="7" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>DonHang</Alias>
+        <Columns isList="true" count="5">
+          <value>ID,System.Int32</value>
+          <value>NhanVienID,System.Int32</value>
+          <value>KhachHangID,System.Int32</value>
+          <value>NgayLap,System.DateTime</value>
+          <value>GhiChuHoaDon,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>61224992831a442f983db6548952cfd5</Key>
+        <Name>DonHang</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from DonHang</SqlCommand>
+      </DonHang>
+      <HangSanXuat Ref="8" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>HangSanXuat</Alias>
+        <Columns isList="true" count="2">
+          <value>ID,System.Int32</value>
+          <value>TenHangSanXuat,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>b45fa5bdb96947aeb432c282decd8cda</Key>
+        <Name>HangSanXuat</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from HangSanXuat</SqlCommand>
+      </HangSanXuat>
+      <HoaDon_ChiTiet Ref="9" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>HoaDon_ChiTiet</Alias>
+        <Columns isList="true" count="5">
+          <value>ID,System.Int32</value>
+          <value>DonHangID,System.Int32</value>
+          <value>SanPhamID,System.Int32</value>
+          <value>SoLuongBan,System.Int32</value>
+          <value>DonGiaBan,System.Int32</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>2dc09760713947599bbf077f48eb0503</Key>
+        <Name>HoaDon_ChiTiet</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from HoaDon_ChiTiet</SqlCommand>
+      </HoaDon_ChiTiet>
+      <KhachHang Ref="10" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>KhachHang</Alias>
+        <Columns isList="true" count="4">
+          <value>ID,System.Int32</value>
+          <value>HoVaTen,System.String</value>
+          <value>DienThoai,System.String</value>
+          <value>DiaChi,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>9ade369784154a8096d565c742bd625b</Key>
+        <Name>KhachHang</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from KhachHang</SqlCommand>
+      </KhachHang>
+      <NhanVien Ref="11" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>NhanVien</Alias>
+        <Columns isList="true" count="7">
+          <value>ID,System.Int32</value>
+          <value>HoVaTen,System.String</value>
+          <value>TenDangNhap,System.String</value>
+          <value>MatKhau,System.String</value>
+          <value>QuyenHan,System.Boolean</value>
+          <value>DienThoai,System.String</value>
+          <value>DiaChi,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>3671686d65f74b0b9c2c5272da6fa179</Key>
+        <Name>NhanVien</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from NhanVien</SqlCommand>
+      </NhanVien>
+      <PhieuNhap Ref="12" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>PhieuNhap</Alias>
+        <Columns isList="true" count="6">
+          <value>ID,System.Int32</value>
+          <value>NhanVienID,System.Int32</value>
+          <value>NhaCungCapID,System.Int32</value>
+          <value>HangSanXuatID,System.Int32</value>
+          <value>NgayLap,System.DateTime</value>
+          <value>GhiChuPhieuNhap,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>ca30c54f3c6f47b2ab8983173c8167b0</Key>
+        <Name>PhieuNhap</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from PhieuNhap</SqlCommand>
+      </PhieuNhap>
+      <VatLieu Ref="13" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>VatLieu</Alias>
+        <Columns isList="true" count="9">
+          <value>id,System.Int32</value>
+          <value>TenSanPham,System.String</value>
+          <value>SoLuong,System.Int32</value>
+          <value>Gia,System.Int32</value>
+          <value>NhaCungCapId,System.Int32</value>
+          <value>DanhMucId,System.Int32</value>
+          <value>HangSanXuatId,System.Int32</value>
+          <value>HinhAnh,System.String</value>
+          <value>MoTa,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>e96978668d7648f89a50acc91177a739</Key>
+        <Name>VatLieu</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from VatLieu</SqlCommand>
+      </VatLieu>
+      <__EFMigrationsHistory Ref="14" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>__EFMigrationsHistory</Alias>
+        <Columns isList="true" count="2">
+          <value>MigrationId,System.String</value>
+          <value>ProductVersion,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>b5e5a6dfa78e4765b2f1071911749587</Key>
+        <Name>__EFMigrationsHistory</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from __EFMigrationsHistory</SqlCommand>
+      </__EFMigrationsHistory>
+      <DanhSachSanPhamNam Ref="15" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>DanhSachSanPhamNam</Alias>
+        <Columns isList="true" count="2">
+          <value>ORIGINAL,ThanhTien,ThanhTien,ThanhTien,System.Int32,_x0037_cd4039833bd4da7a0ff9db4487b6e63</value>
+          <value>ORIGINAL,NgayLap,NgayLap,NgayLap,System.DateTime,baf2a827b7c84e199954f12e0af65efd</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>65bbfe68f313446b9b9c3816dbba5e85</Key>
+        <Name>DanhSachSanPhamNam</Name>
+        <NameInSource>DanhSachSanPham</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>SELECT 
+	YEAR(hd.NgayLap) AS NgayLap,
+	SUM(ctd.SoLuongBan * ctd.DonGiaBan) AS ThanhTien
+	FROM DonHang hd
+JOIN HoaDon_ChiTiet ctd ON hd.ID = ctd.DonHangID
+GROUP BY YEAR(hd.NgayLap)
+</SqlCommand>
+      </DanhSachSanPhamNam>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <UserFunctions isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>c8611bdd35b24056a02a264b8a4e006a</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="16" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="4">
+        <Chart1 Ref="17" type="Stimulsoft.Report.Chart.StiChart" isKey="true">
+          <Area Ref="18" type="Stimulsoft.Report.Chart.StiClusteredColumnArea" isKey="true">
+            <BorderColor>83, 94, 102</BorderColor>
+            <BorderThickness>1</BorderThickness>
+            <Brush>[242:245:252]</Brush>
+            <Chart isRef="17" />
+            <GridLinesHorRight Ref="19" type="Stimulsoft.Report.Chart.StiGridLinesHor" isKey="true">
+              <Area isRef="18" />
+              <Color>Silver</Color>
+              <MinorColor>Gainsboro</MinorColor>
+              <Visible>False</Visible>
+            </GridLinesHorRight>
+            <YAxis Ref="20" type="Stimulsoft.Report.Chart.StiYLeftAxis" isKey="true">
+              <Area isRef="18" />
+              <LineColor>233, 244, 252</LineColor>
+              <Title Ref="21" type="Stimulsoft.Report.Chart.StiAxisTitle" isKey="true">
+                <Color>140, 140, 140</Color>
+                <Direction>BottomToTop</Direction>
+                <Font>Tahoma,12,Bold</Font>
+              </Title>
+            </YAxis>
+            <YRightAxis Ref="22" type="Stimulsoft.Report.Chart.StiYRightAxis" isKey="true">
+              <Area isRef="18" />
+              <Labels Ref="23" type="Stimulsoft.Report.Chart.StiAxisLabels" isKey="true">
+                <Axis isRef="22" />
+                <Color>140, 140, 140</Color>
+                <Font>Tahoma,8</Font>
+                <TextAlignment>Left</TextAlignment>
+              </Labels>
+              <LineColor>233, 244, 252</LineColor>
+              <Title Ref="24" type="Stimulsoft.Report.Chart.StiAxisTitle" isKey="true">
+                <Color>140, 140, 140</Color>
+                <Direction>TopToBottom</Direction>
+                <Font>Tahoma,12,Bold</Font>
+              </Title>
+            </YRightAxis>
+          </Area>
+          <Brush>[242:245:252]</Brush>
+          <ClientRectangle>0,5.2,19,13.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <ConstantLines isList="true" count="0" />
+          <CustomStyleName />
+          <DataRelationName isNull="true" />
+          <DataSourceName>DanhSachSanPhamNam</DataSourceName>
+          <EditorType>Advanced</EditorType>
+          <Expressions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Name>Chart1</Name>
+          <Page isRef="16" />
+          <Parent isRef="16" />
+          <Series isList="true" count="1">
+            <Item17 Ref="25" type="Stimulsoft.Report.Chart.StiClusteredColumnSeries" isKey="true">
+              <Argument>{DanhSachSanPhamNam.NgayLap}</Argument>
+              <ArgumentDataColumn>DanhSachSanPhamNam.NgayLap</ArgumentDataColumn>
+              <BorderColor>Transparent</BorderColor>
+              <Brush>[64:86:141]</Brush>
+              <BrushNegative>Firebrick</BrushNegative>
+              <Chart isRef="17" />
+              <Conditions isList="true" count="0" />
+              <Filters isList="true" count="0" />
+              <SeriesLabels Ref="26" type="Stimulsoft.Report.Chart.StiCenterAxisLabels" isKey="true">
+                <BorderColor>Transparent</BorderColor>
+                <Brush>[119:255:255:255]</Brush>
+                <Chart isRef="17" />
+                <Font>Arial,10</Font>
+                <LabelColor>83, 94, 102</LabelColor>
+                <MarkerSize>8, 6</MarkerSize>
+                <ValueTypeSeparator>-</ValueTypeSeparator>
+                <Width>0</Width>
+              </SeriesLabels>
+              <ShowShadow>False</ShowShadow>
+              <Title>Doanh Thu</Title>
+              <TrendLines isList="true" count="0" />
+              <Value>{DanhSachSanPhamNam.ThanhTien}</Value>
+              <ValueDataColumn>DanhSachSanPhamNam.ThanhTien</ValueDataColumn>
+            </Item17>
+          </Series>
+          <SeriesLabels Ref="27" type="Stimulsoft.Report.Chart.StiCenterAxisLabels" isKey="true">
+            <BorderColor>Transparent</BorderColor>
+            <Brush>[119:255:255:255]</Brush>
+            <Chart isRef="17" />
+            <Font>Arial,10</Font>
+            <LabelColor>83, 94, 102</LabelColor>
+            <MarkerSize>8, 6</MarkerSize>
+            <ValueTypeSeparator>-</ValueTypeSeparator>
+            <Width>0</Width>
+          </SeriesLabels>
+          <SeriesLabelsConditions isList="true" count="0" />
+          <Sort isList="true" count="0" />
+          <Strips isList="true" count="0" />
+          <Style Ref="28" type="Stimulsoft.Report.Chart.StiStyle33" isKey="true">
+            <Conditions isList="true" count="0" />
+            <Name />
+          </Style>
+        </Chart1>
+        <Text1 Ref="29" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>5.6,0.2,8.2,1.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Font>Arial,20</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Name>Text1</Name>
+          <Page isRef="16" />
+          <Parent isRef="16" />
+          <Text>Biểu Đồ Doanh Thu</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text1>
+        <Text2 Ref="30" type="Text" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0.2,3.2,7,1</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Font>Arial,16</Font>
+          <HorAlignment>Center</HorAlignment>
+          <Name>Text2</Name>
+          <Page isRef="16" />
+          <Parent isRef="16" />
+          <Text>Doanh Thu Theo Năm</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text2>
+        <Chart2 Ref="31" type="Stimulsoft.Report.Chart.StiChart" isKey="true">
+          <Area Ref="32" type="Stimulsoft.Report.Chart.StiPieArea" isKey="true">
+            <BorderColor>Transparent</BorderColor>
+            <BorderThickness>1</BorderThickness>
+            <Brush>[255:255:255]</Brush>
+            <Chart isRef="31" />
+          </Area>
+          <Brush>[255:255:255]</Brush>
+          <ClientRectangle>2,18.8,15.4,8.4</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <ConstantLines isList="true" count="0" />
+          <CustomStyleName />
+          <DataRelationName isNull="true" />
+          <DataSourceName>DanhSachSanPham</DataSourceName>
+          <EditorType>Advanced</EditorType>
+          <Expressions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Name>Chart2</Name>
+          <Page isRef="16" />
+          <Parent isRef="16" />
+          <Series isList="true" count="1">
+            <Item21 Ref="33" type="Stimulsoft.Report.Chart.StiPieSeries" isKey="true">
+              <Argument>{DanhSachSanPhamNam.NgayLap}</Argument>
+              <ArgumentDataColumn>DanhSachSanPhamNam.NgayLap</ArgumentDataColumn>
+              <BorderColor>Transparent</BorderColor>
+              <Brush>[52:152:219]</Brush>
+              <Chart isRef="31" />
+              <Conditions isList="true" count="0" />
+              <Filters isList="true" count="0" />
+              <Lighting>False</Lighting>
+              <SeriesLabels Ref="34" type="Stimulsoft.Report.Chart.StiCenterAxisLabels" isKey="true">
+                <BorderColor>Transparent</BorderColor>
+                <Brush>[119:255:255:255]</Brush>
+                <Chart isRef="31" />
+                <Font>Arial,10</Font>
+                <LabelColor>50, 58, 69</LabelColor>
+                <MarkerSize>8, 6</MarkerSize>
+                <ValueTypeSeparator>-</ValueTypeSeparator>
+                <Width>0</Width>
+              </SeriesLabels>
+              <ShowShadow>False</ShowShadow>
+              <Title>Doanh Thu</Title>
+              <Value>{DanhSachSanPhamNam.ThanhTien}</Value>
+              <ValueDataColumn>DanhSachSanPhamNam.ThanhTien</ValueDataColumn>
+            </Item21>
+          </Series>
+          <SeriesLabels Ref="35" type="Stimulsoft.Report.Chart.StiCenterPieLabels" isKey="true">
+            <BorderColor>Transparent</BorderColor>
+            <Brush>[119:255:255:255]</Brush>
+            <Chart isRef="31" />
+            <Font>Arial,10</Font>
+            <LabelColor>50, 58, 69</LabelColor>
+            <MarkerSize>8, 6</MarkerSize>
+            <ValueTypeSeparator>-</ValueTypeSeparator>
+            <Width>0</Width>
+          </SeriesLabels>
+          <SeriesLabelsConditions isList="true" count="0" />
+          <Sort isList="true" count="0" />
+          <Strips isList="true" count="0" />
+          <Style Ref="36" type="Stimulsoft.Report.Chart.StiStyle29" isKey="true">
+            <Conditions isList="true" count="0" />
+            <Name />
+          </Style>
+        </Chart2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>0bd41e3954ae42cba2e49cee962085c1</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="37" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportAuthor>Đức Thành</ReportAuthor>
+  <ReportChanged>5/1/2025 5:48:13 PM</ReportChanged>
+  <ReportCreated>4/30/2025 2:53:44 PM</ReportCreated>
+  <ReportFile>D:\WinFormsApp1\Reports\BieuDoDoanhThu3.mrt</ReportFile>
+  <ReportGuid>09bae4e254e14725a0f7e4d29e73614b</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2025.2.2.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>
