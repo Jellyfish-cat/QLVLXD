@@ -33,7 +33,6 @@
             mnuHeThong = new ToolStripMenuItem();
             mnuDangNhap = new ToolStripMenuItem();
             mnuDangXuat = new ToolStripMenuItem();
-            đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
             mnuThoat = new ToolStripMenuItem();
             mnuQuanLy = new ToolStripMenuItem();
             mnuDanhMuc = new ToolStripMenuItem();
@@ -55,7 +54,6 @@
             mnuDT = new ToolStripMenuItem();
             mnuTroGiup = new ToolStripMenuItem();
             mnuThongTin = new ToolStripMenuItem();
-            mnuHuongDan = new ToolStripMenuItem();
             mnuSLKP = new ToolStripMenuItem();
             mnuSaoLuu = new ToolStripMenuItem();
             mnuKhoiPhuc = new ToolStripMenuItem();
@@ -95,7 +93,7 @@
             // 
             // mnuHeThong
             // 
-            mnuHeThong.DropDownItems.AddRange(new ToolStripItem[] { mnuDangNhap, mnuDangXuat, đổiMậtKhẩuToolStripMenuItem, mnuThoat });
+            mnuHeThong.DropDownItems.AddRange(new ToolStripItem[] { mnuDangNhap, mnuDangXuat, mnuThoat });
             mnuHeThong.Name = "mnuHeThong";
             mnuHeThong.ShowShortcutKeys = false;
             mnuHeThong.Size = new Size(88, 24);
@@ -105,28 +103,22 @@
             // 
             mnuDangNhap.Name = "mnuDangNhap";
             mnuDangNhap.ShortcutKeyDisplayString = "";
-            mnuDangNhap.Size = new Size(183, 26);
+            mnuDangNhap.Size = new Size(224, 26);
             mnuDangNhap.Text = "&Đăng Nhập...";
             mnuDangNhap.Click += mnuDangNhap_Click;
             // 
             // mnuDangXuat
             // 
             mnuDangXuat.Name = "mnuDangXuat";
-            mnuDangXuat.Size = new Size(183, 26);
+            mnuDangXuat.Size = new Size(224, 26);
             mnuDangXuat.Text = "Đăng &Xuất";
             mnuDangXuat.Click += mnuDangXuat_Click;
-            // 
-            // đổiMậtKhẩuToolStripMenuItem
-            // 
-            đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            đổiMậtKhẩuToolStripMenuItem.Size = new Size(183, 26);
-            đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật &Khẩu";
             // 
             // mnuThoat
             // 
             mnuThoat.Name = "mnuThoat";
             mnuThoat.ShortcutKeys = Keys.Alt | Keys.F4;
-            mnuThoat.Size = new Size(183, 26);
+            mnuThoat.Size = new Size(224, 26);
             mnuThoat.Text = "&Thoát";
             mnuThoat.Click += mnuThoat_Click;
             // 
@@ -256,7 +248,7 @@
             // 
             // mnuTroGiup
             // 
-            mnuTroGiup.DropDownItems.AddRange(new ToolStripItem[] { mnuThongTin, mnuHuongDan });
+            mnuTroGiup.DropDownItems.AddRange(new ToolStripItem[] { mnuThongTin });
             mnuTroGiup.Name = "mnuTroGiup";
             mnuTroGiup.Size = new Size(88, 24);
             mnuTroGiup.Text = "Trợ Giú&p...";
@@ -265,17 +257,9 @@
             // 
             mnuThongTin.Name = "mnuThongTin";
             mnuThongTin.ShortcutKeys = Keys.Control | Keys.F1;
-            mnuThongTin.Size = new Size(287, 26);
+            mnuThongTin.Size = new Size(286, 26);
             mnuThongTin.Text = "Thông tin Phần mềm";
             mnuThongTin.Click += mnuThongTin_Click;
-            // 
-            // mnuHuongDan
-            // 
-            mnuHuongDan.Name = "mnuHuongDan";
-            mnuHuongDan.ShortcutKeys = Keys.Control | Keys.F2;
-            mnuHuongDan.Size = new Size(287, 26);
-            mnuHuongDan.Text = "Hường Dẫn Sử Dụng";
-            mnuHuongDan.Click += mnuHuongDan_Click;
             // 
             // mnuSLKP
             // 
@@ -287,14 +271,14 @@
             // mnuSaoLuu
             // 
             mnuSaoLuu.Name = "mnuSaoLuu";
-            mnuSaoLuu.Size = new Size(224, 26);
+            mnuSaoLuu.Size = new Size(157, 26);
             mnuSaoLuu.Text = "Sao Lưu";
             mnuSaoLuu.Click += mnuSaoLuu_Click;
             // 
             // mnuKhoiPhuc
             // 
             mnuKhoiPhuc.Name = "mnuKhoiPhuc";
-            mnuKhoiPhuc.Size = new Size(224, 26);
+            mnuKhoiPhuc.Size = new Size(157, 26);
             mnuKhoiPhuc.Text = "Khôi Phục";
             mnuKhoiPhuc.Click += mnuKhoiPhuc_Click;
             // 
@@ -568,7 +552,7 @@
             // btnThoat
             // 
             btnThoat.BackColor = Color.SteelBlue;
-            btnThoat.ForeColor = SystemColors.ButtonHighlight;
+            btnThoat.ForeColor = Color.Red;
             btnThoat.Image = (Image)resources.GetObject("btnThoat.Image");
             btnThoat.Location = new Point(3, 993);
             btnThoat.Name = "btnThoat";
@@ -606,7 +590,6 @@
         private ToolStripMenuItem mnuHeThong;
         private ToolStripMenuItem mnuDangNhap;
         private ToolStripMenuItem mnuDangXuat;
-        private ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private ToolStripMenuItem mnuThoat;
         private ToolStripMenuItem mnuQuanLy;
         private ToolStripMenuItem mnuDanhMuc;
@@ -619,7 +602,6 @@
         private ToolStripMenuItem mnuThongKe;
         private ToolStripMenuItem mnuTroGiup;
         private ToolStripMenuItem mnuThongTin;
-        private ToolStripMenuItem mnuHuongDan;
         private Button btnTrangChu;
         private Button btnHangSanXuat;
         private Button btnSanPham;

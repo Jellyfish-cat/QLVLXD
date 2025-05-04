@@ -238,6 +238,8 @@ namespace QuanLiBanhang.Froms
                 MessageBox.Show("Đơn giá bán sản phẩm phải lớn hơn 0.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (numTonKho.Value < numSoLuongBan.Value)
                 MessageBox.Show("số lượng bán sản phẩm không được lớn hơn tồn kho.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (numTonKho.Value <= 0)
+                MessageBox.Show("sản phẩm tồn kho đã bằng 0.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 int maSanPham = Convert.ToInt32(cboSanPham.SelectedValue.ToString());

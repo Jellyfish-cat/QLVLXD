@@ -286,6 +286,7 @@
             txtMatKhau.Location = new Point(498, 71);
             txtMatKhau.Margin = new Padding(3, 4, 3, 4);
             txtMatKhau.Name = "txtMatKhau";
+            txtMatKhau.PasswordChar = '*';
             txtMatKhau.Size = new Size(223, 27);
             txtMatKhau.TabIndex = 4;
             // 
@@ -550,7 +551,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "NhanVien";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "a";
+            Text = "Nhân Viên";
             Load += KhachHang_Load;
             panel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);

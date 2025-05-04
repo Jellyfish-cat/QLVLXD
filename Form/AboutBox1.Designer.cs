@@ -75,7 +75,7 @@
             logoPictureBox.Name = "logoPictureBox";
             tableLayoutPanel.SetRowSpan(logoPictureBox, 6);
             logoPictureBox.Size = new Size(175, 397);
-            logoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
+            logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             logoPictureBox.TabIndex = 12;
             logoPictureBox.TabStop = false;
             // 
@@ -90,6 +90,7 @@
             labelProductName.TabIndex = 19;
             labelProductName.Text = "Product Name";
             labelProductName.TextAlign = ContentAlignment.MiddleLeft;
+            labelProductName.Click += labelProductName_Click;
             // 
             // labelVersion
             // 
@@ -100,7 +101,7 @@
             labelVersion.Name = "labelVersion";
             labelVersion.Size = new Size(361, 26);
             labelVersion.TabIndex = 0;
-            labelVersion.Text = "Version";
+            labelVersion.Text = "Version ";
             labelVersion.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelCopyright
@@ -124,7 +125,7 @@
             labelCompanyName.Name = "labelCompanyName";
             labelCompanyName.Size = new Size(361, 26);
             labelCompanyName.TabIndex = 22;
-            labelCompanyName.Text = "Company Name";
+            labelCompanyName.Text = "Company Name : công ty phần mềm";
             labelCompanyName.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // textBoxDescription

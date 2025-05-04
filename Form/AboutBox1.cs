@@ -20,6 +20,7 @@ namespace QLBH
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
+            
         }
 
         #region Assembly Attribute Accessors
@@ -107,6 +108,9 @@ namespace QLBH
             this.Close();
         }
 
+        private void labelProductName_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

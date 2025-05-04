@@ -418,6 +418,11 @@ namespace WinFormsApp1
                 MessageBox.Show("Số lượng bán phải lớn hơn 0.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (numDonGiaBan.Value <= 0)
                 MessageBox.Show("Đơn giá bán sản phẩm phải lớn hơn 0.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(numSoLuongBan.Value>numTonKho.Value)
+                MessageBox.Show("Số lượng bán không được lớn hơn tồn kho.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if ( numTonKho.Value<=0)
+                MessageBox.Show("sản phẩm tồn kho đã bằng 0.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
                 int maSanPham = masp;
                 var chiTiet = hoaDonChiTiet.FirstOrDefault(x => x.SanPhamID == maSanPham);

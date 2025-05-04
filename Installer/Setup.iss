@@ -1,6 +1,6 @@
 [Setup]
 AppName=Quản Lý Vật Liệu Xây Dựng
-AppVersion=1.0.0
+AppVersion=1.0.1
 DefaultDirName={autopf}\QLVLXD
 DefaultGroupName=Quản Lý Vật Liệu Xây Dựng
 UninstallDisplayIcon={app}\WinFormsApp1.exe

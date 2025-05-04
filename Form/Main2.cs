@@ -631,7 +631,7 @@ namespace WinFormsApp1
                             progressForm.Invoke(() => statusLabel.Text = "Đang tải bản cập nhật...");
                             string zipPath = "Update.zip";
                             using var client = new HttpClient();
-                            var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/releases/download/v1.0.2/WinFormsApp1.zip");
+                            var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/archive/refs/tags/1.0.2.zip");
                             await File.WriteAllBytesAsync(zipPath, data);
 
                             // Giải nén
