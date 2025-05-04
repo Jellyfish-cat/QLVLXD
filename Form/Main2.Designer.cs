@@ -59,7 +59,7 @@
             mnuSLKP = new ToolStripMenuItem();
             mnuSaoLuu = new ToolStripMenuItem();
             mnuKhoiPhuc = new ToolStripMenuItem();
-            cậpNhậtToolStripMenuItem = new ToolStripMenuItem();
+            mnuCapNhat = new ToolStripMenuItem();
             btnTrangChu = new Button();
             btnHangSanXuat = new Button();
             btnSanPham = new Button();
@@ -86,7 +86,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(30, 30);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuHeThong, mnuQuanLy, mnuHoatDong, mnuThongKe, mnuBaoCao, mnuTroGiup, mnuSLKP, cậpNhậtToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuHeThong, mnuQuanLy, mnuHoatDong, mnuThongKe, mnuBaoCao, mnuTroGiup, mnuSLKP, mnuCapNhat });
             menuStrip1.Location = new Point(212, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(829, 28);
@@ -287,22 +287,23 @@
             // mnuSaoLuu
             // 
             mnuSaoLuu.Name = "mnuSaoLuu";
-            mnuSaoLuu.Size = new Size(157, 26);
+            mnuSaoLuu.Size = new Size(224, 26);
             mnuSaoLuu.Text = "Sao Lưu";
             mnuSaoLuu.Click += mnuSaoLuu_Click;
             // 
             // mnuKhoiPhuc
             // 
             mnuKhoiPhuc.Name = "mnuKhoiPhuc";
-            mnuKhoiPhuc.Size = new Size(157, 26);
+            mnuKhoiPhuc.Size = new Size(224, 26);
             mnuKhoiPhuc.Text = "Khôi Phục";
             mnuKhoiPhuc.Click += mnuKhoiPhuc_Click;
             // 
-            // cậpNhậtToolStripMenuItem
+            // mnuCapNhat
             // 
-            cậpNhậtToolStripMenuItem.Name = "cậpNhậtToolStripMenuItem";
-            cậpNhậtToolStripMenuItem.Size = new Size(85, 24);
-            cậpNhậtToolStripMenuItem.Text = "Cập Nhật";
+            mnuCapNhat.Name = "mnuCapNhat";
+            mnuCapNhat.Size = new Size(85, 24);
+            mnuCapNhat.Text = "Cập Nhật";
+            mnuCapNhat.Click += mnuCapNhat_Click;
             // 
             // btnTrangChu
             // 
@@ -649,6 +650,6 @@
         private ToolStripMenuItem mnuSaoLuu;
         private ToolStripMenuItem mnuKhoiPhuc;
         private FlowLayoutPanel flowLayoutPanel1;
-        private ToolStripMenuItem cậpNhậtToolStripMenuItem;
+        private ToolStripMenuItem mnuCapNhat;
     }
 }

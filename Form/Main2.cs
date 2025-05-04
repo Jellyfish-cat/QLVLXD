@@ -78,6 +78,8 @@ namespace WinFormsApp1
             mnuThongKe.Enabled = false;
             mnuBaoCao.Enabled = false;
             mnuTroGiup.Enabled = true;
+            mnuSLKP.Enabled = false;
+            mnuCapNhat.Enabled = false;
         }
         public void QuanTriVien()
         {
@@ -104,6 +106,8 @@ namespace WinFormsApp1
             mnuThongKe.Enabled = true;
             mnuBaoCao.Enabled = true;
             mnuTroGiup.Enabled = true;
+            mnuSLKP.Enabled = true;
+            mnuCapNhat.Enabled = true;
         }
         public void NhanVien()
         {
@@ -133,6 +137,8 @@ namespace WinFormsApp1
             mnuThongKe.Enabled = true;
             mnuBaoCao.Enabled = true;
             mnuTroGiup.Enabled = true;
+            mnuSLKP.Enabled = false;
+            mnuCapNhat.Enabled = false;
         }
         private void DangNhap()
         {
@@ -220,63 +226,7 @@ namespace WinFormsApp1
         {
             ChuaDangNhap();
             DangNhap();
-            var updateService = new UpdateService();
-            var latestVersion = await updateService.GetLatestVersionFromGitHub();
-            var currentVersion = Application.ProductVersion;
-
-            // Nếu có bản cập nhật mới
-            if (latestVersion != null && latestVersion.TrimStart('v') != currentVersion)
-            {
-                var result = MessageBox.Show(
-                    $"Phiên bản mới {latestVersion} đã có. Bạn có muốn cập nhật không?",
-                    "Cập nhật",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information
-                );
-
-                // Nếu người dùng đồng ý, mở trang GitHub để tải bản cập nhật
-                if (result == DialogResult.Yes)
-                {
-                    System.Diagnostics.Process.Start("https://github.com/Jellyfish-cat/QLVLXD/releases/latest");
-                    Application.Exit(); // Đóng ứng dụng nếu người dùng đồng ý cập nhật
-                }
-            }
-            else
-            {
-                MessageBox.Show("Ứng dụng của bạn đã được cập nhật!");
-            }
-
-            // Nếu người dùng muốn cập nhật ngay
-            if (latestVersion != currentVersion)
-            {
-                DialogResult kq = MessageBox.Show("Bạn Có Muốn Cập Nhật Ngay Bây Giờ?", "Cập Nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (kq == DialogResult.Yes)
-                {
-                    var running = Process.GetProcessesByName("WinFormsApp1");
-                    foreach (var p in running) p.Kill(); // Đóng ứng dụng cũ
-
-                    try
-                    {
-                        // Tải bản mới (.zip) từ GitHub
-                        string zipPath = "update.zip";
-                        using var client = new HttpClient();
-                        var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/releases/download/v1.0.2/WinFormsApp1.zip");
-                        await File.WriteAllBytesAsync(zipPath, data);
-
-                        // Giải nén và ghi đè vào thư mục hiện tại
-                        string extractPath = Directory.GetCurrentDirectory();
-                        ZipFile.ExtractToDirectory(zipPath, extractPath, true);
-                        File.Delete(zipPath);
-
-                        // Mở lại ứng dụng
-                        Process.Start("WinFormsApp1.exe");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Đã xảy ra lỗi trong quá trình cập nhật: {ex.Message}", "Lỗi cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
+            mnuCapNhat_Click(sender, e);
         }
 
         private void sảnPhẩmToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -576,7 +526,7 @@ namespace WinFormsApp1
         {
             mnuThoat_Click(sender, e);
         }
-        
+
         private void mnuSaoLuu_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
@@ -590,7 +540,7 @@ namespace WinFormsApp1
                     MessageBox.Show("Backup completed successfully!");
                 }
             }
-           
+
         }
 
         private void mnuKhoiPhuc_Click(object sender, EventArgs e)
@@ -613,6 +563,49 @@ namespace WinFormsApp1
                 }
             }
         }
-        
+        private async void mnuCapNhat_Click(object sender, EventArgs e)
+        {
+            var updateService = new UpdateService();
+            var latestVersion = await updateService.GetLatestVersionFromGitHub();
+            var currentVersion = Application.ProductVersion;
+
+            // Loại bỏ tiền tố 'v' nếu có trong phiên bản GitHub
+            latestVersion = latestVersion?.TrimStart('v');
+
+            // Nếu có bản cập nhật mới
+            if (latestVersion != null && latestVersion != currentVersion)
+            {
+                mnuCapNhat.ForeColor = Color.Red;
+                DialogResult kq = MessageBox.Show("Bạn Có Muốn Cập Nhật Ngay Bây Giờ?", "Cập Nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (kq == DialogResult.Yes)
+                {
+                    var running = Process.GetProcessesByName("WinFormsApp1");
+                    foreach (var p in running)
+                        p.Kill(); // Đóng ứng dụng cũ
+
+                    try
+                    {
+                        // Tải bản mới (.zip) từ GitHub
+                        string zipPath = "QLVLXD-1.0.0.zip";
+                        using var client = new HttpClient();
+                        var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/releases/download/v1.0.2/WinFormsApp1.zip");
+                        await File.WriteAllBytesAsync(zipPath, data);
+
+                        // Giải nén và ghi đè vào thư mục hiện tại
+                        string extractPath = Directory.GetCurrentDirectory();
+                        ZipFile.ExtractToDirectory(zipPath, extractPath, true); // Ghi đè các tệp cũ
+                        File.Delete(zipPath); // Xóa tệp .zip sau khi giải nén
+
+                        // Mở lại ứng dụng
+                        Process.Start("WinFormsApp1.exe");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Đã xảy ra lỗi trong quá trình cập nhật: {ex.Message}", "Lỗi cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+        }
     }
 }

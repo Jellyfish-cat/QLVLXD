@@ -123,20 +123,27 @@ namespace QuanLiBanhang.Froms
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int maSanPham = Convert.ToInt32(dataGridView.CurrentRow.Cells["SanPhamID"].Value.ToString());
-            var chiTiet = hoaDonChiTiet.FirstOrDefault(x => x.SanPhamID == maSanPham);
-            var sp = context.VatLieu.Find(maSanPham);
-            if (chiTiet != null)
+            try
             {
-                sp.SoLuong += Convert.ToInt32(numSoLuongBan.Value);
-                context.SaveChanges();
-                SanPham spp = new SanPham();
-                spp.SanPham_Load(sender, e);
-                var sanPham = context.VatLieu.Find(maSanPham);
-                numTonKho.Value = sanPham.SoLuong;
-                hoaDonChiTiet.Remove(chiTiet);
+                int maSanPham = Convert.ToInt32(dataGridView.CurrentRow.Cells["SanPhamID"].Value.ToString());
+                var chiTiet = hoaDonChiTiet.FirstOrDefault(x => x.SanPhamID == maSanPham);
+                var sp = context.VatLieu.Find(maSanPham);
+                if (chiTiet != null)
+                {
+                    sp.SoLuong += Convert.ToInt32(numSoLuongBan.Value);
+                    context.SaveChanges();
+                    SanPham spp = new SanPham();
+                    spp.SanPham_Load(sender, e);
+                    var sanPham = context.VatLieu.Find(maSanPham);
+                    numTonKho.Value = sanPham.SoLuong;
+                    hoaDonChiTiet.Remove(chiTiet);
+                }
+                BatTatChucNang();
             }
-            BatTatChucNang();
+            catch
+            {
+                MessageBox.Show("Hãy Nhấn Vào Sản Phầm mà bạn đang muốn thao tác đến.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
@@ -346,9 +353,9 @@ namespace QuanLiBanhang.Froms
                 }).ToList();
                 BindingSource bindingSource = new BindingSource();
                 bindingSource.DataSource = cthd;
-
                 dataGridView.DataSource = bindingSource;
             }
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -405,9 +412,9 @@ namespace QuanLiBanhang.Froms
                 numTonKho.Value = sp.SoLuong;
                 soluonghientai = (int)numSoLuongBan.Value;
             }
-            catch (Exception ex)
+               catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Hãy Nhấn Vào Sản Phầm mà bạn đang muốn thao tác đến.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

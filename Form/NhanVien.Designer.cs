@@ -455,7 +455,7 @@
             // 
             txtTimKiem.Anchor = AnchorStyles.None;
             txtTimKiem.BackColor = SystemColors.ButtonHighlight;
-            txtTimKiem.ForeColor = SystemColors.ScrollBar;
+            txtTimKiem.ForeColor = Color.Black;
             txtTimKiem.Location = new Point(24, 38);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";

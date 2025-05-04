@@ -322,17 +322,24 @@ namespace WinFormsApp1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int maSanPham = Convert.ToInt32(dataGridView.CurrentRow.Cells["SanPhamID"].Value.ToString());
-            var chiTiet = hoaDonChiTiet.FirstOrDefault(x => x.SanPhamID == maSanPham);
-            var sp = context.VatLieu.Find(maSanPham);
-            if (chiTiet != null)
+            try
             {
-                sp.SoLuong += Convert.ToInt32(numSoLuongBan.Value);
-                context.SaveChanges();
-                numTonKho.Value = sp.SoLuong;
-                hoaDonChiTiet.Remove(chiTiet);
+                int maSanPham = Convert.ToInt32(dataGridView.CurrentRow.Cells["SanPhamID"].Value.ToString());
+                var chiTiet = hoaDonChiTiet.FirstOrDefault(x => x.SanPhamID == maSanPham);
+                var sp = context.VatLieu.Find(maSanPham);
+                if (chiTiet != null)
+                {
+                    sp.SoLuong += Convert.ToInt32(numSoLuongBan.Value);
+                    context.SaveChanges();
+                    numTonKho.Value = sp.SoLuong;
+                    hoaDonChiTiet.Remove(chiTiet);
+                }
+                BatTatChucNang();
             }
-            BatTatChucNang();
+            catch 
+            {
+                MessageBox.Show("Hãy Nhấn Vào Sản Phầm mà bạn đang muốn thao tác đến.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnLuuHoaDon_Click(object sender, EventArgs e)
@@ -529,58 +536,65 @@ namespace WinFormsApp1
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int sanPhamId = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["SanPhamId"].Value);
-            flowLayoutPanel1.Controls.Clear();
-            var danhSach = context.VatLieu.ToList();
-            foreach (var spchon in danhSach)
+            try
             {
-                var panel = new Panel
+                int sanPhamId = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["SanPhamId"].Value);
+                flowLayoutPanel1.Controls.Clear();
+                var danhSach = context.VatLieu.ToList();
+                foreach (var spchon in danhSach)
                 {
-                    Width = 216,
-                    Height = 239,
-                    Margin = new Padding(10),
-                    BorderStyle = BorderStyle.FixedSingle
-                };
+                    var panel = new Panel
+                    {
+                        Width = 216,
+                        Height = 239,
+                        Margin = new Padding(10),
+                        BorderStyle = BorderStyle.FixedSingle
+                    };
 
-                PictureBox pic = new PictureBox
-                {
-                    Width = 216,
-                    Height = 235,
-                    SizeMode = PictureBoxSizeMode.Zoom,
-                    Image = Image.FromFile(spchon.HinhAnh), // Đảm bảo đường dẫn đúng
-                };
+                    PictureBox pic = new PictureBox
+                    {
+                        Width = 216,
+                        Height = 235,
+                        SizeMode = PictureBoxSizeMode.Zoom,
+                        Image = Image.FromFile(spchon.HinhAnh), // Đảm bảo đường dẫn đúng
+                    };
 
-                Label lblTen = new Label
-                {
-                    Text = spchon.TenSanPham,
-                    AutoSize = false,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Dock = DockStyle.Bottom,
-                    Height = 40
-                };
+                    Label lblTen = new Label
+                    {
+                        Text = spchon.TenSanPham,
+                        AutoSize = false,
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Dock = DockStyle.Bottom,
+                        Height = 40
+                    };
 
 
-                if (spchon.id == sanPhamId)
-                {
-                    ChonPanel(panel, lblTen, spchon);
+                    if (spchon.id == sanPhamId)
+                    {
+                        ChonPanel(panel, lblTen, spchon);
+                    }
+                    panel.Click += (sender, e) =>
+                    {
+                        ChonPanel(panel, lblTen, spchon);
+                    };
+                    pic.Click += (sender, e) =>
+                    {
+                        ChonPanel(panel, lblTen, spchon);
+                    };
+                    lblTen.Click += (sender, e) =>
+                    {
+
+                        ChonPanel(panel, lblTen, spchon);
+                    };
+                    panel.Controls.Add(pic);
+                    panel.Controls.Add(lblTen);
+                    lblTen.BringToFront();
+                    flowLayoutPanel1.Controls.Add(panel);
                 }
-                panel.Click += (sender, e) =>
-                {
-                    ChonPanel(panel, lblTen, spchon);
-                };
-                pic.Click += (sender, e) =>
-                {
-                    ChonPanel(panel, lblTen, spchon);
-                };
-                lblTen.Click += (sender, e) =>
-                {
-
-                    ChonPanel(panel, lblTen, spchon);
-                };
-                panel.Controls.Add(pic);
-                panel.Controls.Add(lblTen);
-                lblTen.BringToFront();
-                flowLayoutPanel1.Controls.Add(panel);
+            }
+            catch 
+            {
+                MessageBox.Show("Hãy Nhấn Vào Sản Phầm mà bạn đang muốn thao tác đến.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
