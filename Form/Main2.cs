@@ -538,7 +538,7 @@ namespace WinFormsApp1
                     string backupFilePath = Path.Combine(folderDialog.SelectedPath, "QLVLXD.bak");
                     // Tiến hành sao lưu vào backupFilePath
                     _backupRestoreService.BackupDatabase(backupFilePath);
-                    MessageBox.Show("Backup completed successfully!");
+                    MessageBox.Show("Sao Lưu Thành Công!");
                 }
             }
 
@@ -577,52 +577,92 @@ namespace WinFormsApp1
             if (latestVersion != null && latestVersion != currentVersion)
             {
                 mnuCapNhat.ForeColor = Color.Red;
-                DialogResult kq = MessageBox.Show("Bạn Có Muốn Cập Nhật Ngay Bây Giờ?", "Cập Nhật", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                DialogResult kq = MessageBox.Show(
+                    "Bạn Có Muốn Cập Nhật Ngay Bây Giờ?",
+                    "Cập Nhật",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
                 if (kq == DialogResult.Yes)
                 {
-                    var running = Process.GetProcessesByName("WinFormsApp1");
-                    foreach (var p in running)
-                        p.Kill(); // Đóng ứng dụng cũ
+                    // Tạo form tiến trình cập nhật
+                    Form progressForm = new Form
+                    {
+                        Text = "Đang cập nhật...",
+                        Width = 400,
+                        Height = 120,
+                        FormBorderStyle = FormBorderStyle.FixedDialog,
+                        StartPosition = FormStartPosition.CenterScreen,
+                        ControlBox = false
+                    };
+
+                    var statusLabel = new Label
+                    {
+                        Dock = DockStyle.Top,
+                        Height = 40,
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Text = "Đang chuẩn bị..."
+                    };
+
+                    var progressBar = new ProgressBar
+                    {
+                        Style = ProgressBarStyle.Marquee,
+                        Dock = DockStyle.Bottom,
+                        Height = 10
+                    };
+
+                    progressForm.Controls.Add(statusLabel);
+                    progressForm.Controls.Add(progressBar);
+                    progressForm.Show();
 
                     try
                     {
-                        Form progressForm = new Form
-                        {
-                            Text = "Đang cập nhật...",
-                            Width = 400,
-                            Height = 100,
-                            FormBorderStyle = FormBorderStyle.FixedDialog,
-                            StartPosition = FormStartPosition.CenterScreen,
-                            ControlBox = false
-                        };
-                        var statusLabel = new Label { Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter };
-                        progressForm.Controls.Add(statusLabel);
-                        progressForm.Show();
+                        // Bước 1: Đóng tiến trình cũ
+                        statusLabel.Text = "Đang đóng ứng dụng...";
+                        var running = Process.GetProcessesByName("WinFormsApp1");
+                        foreach (var p in running)
+                            if (p.Id != Process.GetCurrentProcess().Id) p.Kill();
 
-                        // Cập nhật bước 1: Đang tải về
+                        await Task.Delay(500);
+
+                        // Bước 2: Tải file zip
                         statusLabel.Text = "Đang tải bản cập nhật...";
                         string zipPath = "Update.zip";
                         using var client = new HttpClient();
                         var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/releases/download/v1.0.2/WinFormsApp1.zip");
                         await File.WriteAllBytesAsync(zipPath, data);
 
-                        // Cập nhật bước 2: Giải nén
+                        // Bước 3: Giải nén
                         statusLabel.Text = "Đang giải nén bản cập nhật...";
                         string extractPath = Directory.GetCurrentDirectory();
                         ZipFile.ExtractToDirectory(zipPath, extractPath, true);
                         File.Delete(zipPath);
 
-                        // Cập nhật bước 3: Mở lại ứng dụng
+                        // Bước 4: Khởi động lại ứng dụng
                         statusLabel.Text = "Hoàn tất. Đang khởi động lại ứng dụng...";
-                        await Task.Delay(1000); // Chờ người dùng thấy thông báo
-                        progressForm.Close();
-                        Process.Start("WinFormsApp1.exe");
-                        Application.Exit();
+                        await Task.Delay(1000);
 
+                        progressForm.Close();
+
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = "WinFormsApp1.exe",
+                            UseShellExecute = true
+                        });
+
+                        await Task.Delay(500); // Đảm bảo tiến trình mới được mở
+                        Application.Exit();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Đã xảy ra lỗi trong quá trình cập nhật: {ex.Message}", "Lỗi cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        progressForm.Close();
+                        MessageBox.Show(
+                            $"Đã xảy ra lỗi trong quá trình cập nhật: {ex.Message}",
+                            "Lỗi cập nhật",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
                     }
                 }
             }
