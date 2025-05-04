@@ -616,54 +616,53 @@ namespace WinFormsApp1
                     progressForm.Controls.Add(progressBar);
                     progressForm.Show();
 
-                    try
+                    await Task.Run(async () =>
                     {
-                        // Bước 1: Đóng tiến trình cũ
-                        statusLabel.Text = "Đang đóng ứng dụng...";
-                        var running = Process.GetProcessesByName("WinFormsApp1");
-                        foreach (var p in running)
-                            if (p.Id != Process.GetCurrentProcess().Id) p.Kill();
-
-                        await Task.Delay(500);
-
-                        // Bước 2: Tải file zip
-                        statusLabel.Text = "Đang tải bản cập nhật...";
-                        string zipPath = "Update.zip";
-                        using var client = new HttpClient();
-                        var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/releases/download/v1.0.2/WinFormsApp1.zip");
-                        await File.WriteAllBytesAsync(zipPath, data);
-
-                        // Bước 3: Giải nén
-                        statusLabel.Text = "Đang giải nén bản cập nhật...";
-                        string extractPath = Directory.GetCurrentDirectory();
-                        ZipFile.ExtractToDirectory(zipPath, extractPath, true);
-                        File.Delete(zipPath);
-
-                        // Bước 4: Khởi động lại ứng dụng
-                        statusLabel.Text = "Hoàn tất. Đang khởi động lại ứng dụng...";
-                        await Task.Delay(1000);
-
-                        progressForm.Close();
-
-                        Process.Start(new ProcessStartInfo
+                        try
                         {
-                            FileName = "WinFormsApp1.exe",
-                            UseShellExecute = true
-                        });
+                            // Đóng ứng dụng cũ
+                            progressForm.Invoke(() => statusLabel.Text = "Đang đóng ứng dụng...");
+                            var running = Process.GetProcessesByName("WinFormsApp1");
+                            foreach (var p in running)
+                                if (p.Id != Process.GetCurrentProcess().Id) p.Kill();
+                            await Task.Delay(500);
 
-                        await Task.Delay(500); // Đảm bảo tiến trình mới được mở
-                        Application.Exit();
-                    }
-                    catch (Exception ex)
-                    {
-                        progressForm.Close();
-                        MessageBox.Show(
-                            $"Đã xảy ra lỗi trong quá trình cập nhật: {ex.Message}",
-                            "Lỗi cập nhật",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error
-                        );
-                    }
+                            // Tải về
+                            progressForm.Invoke(() => statusLabel.Text = "Đang tải bản cập nhật...");
+                            string zipPath = "Update.zip";
+                            using var client = new HttpClient();
+                            var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/releases/download/v1.0.2/WinFormsApp1.zip");
+                            await File.WriteAllBytesAsync(zipPath, data);
+
+                            // Giải nén
+                            progressForm.Invoke(() => statusLabel.Text = "Đang giải nén bản cập nhật...");
+                            string extractPath = Directory.GetCurrentDirectory();
+                            ZipFile.ExtractToDirectory(zipPath, extractPath, true);
+                            File.Delete(zipPath);
+
+                            // Khởi động lại
+                            progressForm.Invoke(() => statusLabel.Text = "Khởi động lại ứng dụng...");
+                            await Task.Delay(1000);
+
+                            progressForm.Invoke(() => progressForm.Close());
+
+                            Process.Start("Updater.exe"); // Dùng Updater trung gian
+                            Application.Exit();
+                        }
+                        catch (Exception ex)
+                        {
+                            progressForm.Invoke(() =>
+                            {
+                                progressForm.Close();
+                                MessageBox.Show(
+                                    $"Lỗi cập nhật: {ex.Message}",
+                                    "Lỗi",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            });
+                        }
+                    });
+
                 }
             }
 
