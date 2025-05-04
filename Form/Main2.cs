@@ -542,7 +542,6 @@ namespace WinFormsApp1
             }
 
         }
-
         private void mnuKhoiPhuc_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
@@ -567,8 +566,8 @@ namespace WinFormsApp1
         {
             var updateService = new UpdateService();
             var latestVersion = await updateService.GetLatestVersionFromGitHub();
-            var currentVersion = Application.ProductVersion;
-
+            var currentVersion = Application.ProductVersion.Split('#')[0];
+            MessageBox.Show(currentVersion, "");
             // Loại bỏ tiền tố 'v' nếu có trong phiên bản GitHub
             latestVersion = latestVersion?.TrimStart('v');
 
@@ -585,19 +584,39 @@ namespace WinFormsApp1
 
                     try
                     {
-                        // Tải bản mới (.zip) từ GitHub
-                        string zipPath = "QLVLXD-1.0.0.zip";
+                        Form progressForm = new Form
+                        {
+                            Text = "Đang cập nhật...",
+                            Width = 400,
+                            Height = 100,
+                            FormBorderStyle = FormBorderStyle.FixedDialog,
+                            StartPosition = FormStartPosition.CenterScreen,
+                            ControlBox = false
+                        };
+                        var statusLabel = new Label { Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter };
+                        progressForm.Controls.Add(statusLabel);
+                        progressForm.Show();
+
+                        // Cập nhật bước 1: Đang tải về
+                        statusLabel.Text = "Đang tải bản cập nhật...";
+                        string zipPath = "Update.zip";
                         using var client = new HttpClient();
                         var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/releases/download/v1.0.2/WinFormsApp1.zip");
                         await File.WriteAllBytesAsync(zipPath, data);
 
-                        // Giải nén và ghi đè vào thư mục hiện tại
+                        // Cập nhật bước 2: Giải nén
+                        statusLabel.Text = "Đang giải nén bản cập nhật...";
                         string extractPath = Directory.GetCurrentDirectory();
-                        ZipFile.ExtractToDirectory(zipPath, extractPath, true); // Ghi đè các tệp cũ
-                        File.Delete(zipPath); // Xóa tệp .zip sau khi giải nén
+                        ZipFile.ExtractToDirectory(zipPath, extractPath, true);
+                        File.Delete(zipPath);
 
-                        // Mở lại ứng dụng
+                        // Cập nhật bước 3: Mở lại ứng dụng
+                        statusLabel.Text = "Hoàn tất. Đang khởi động lại ứng dụng...";
+                        await Task.Delay(1000); // Chờ người dùng thấy thông báo
+                        progressForm.Close();
                         Process.Start("WinFormsApp1.exe");
+                        Application.Exit();
+
                     }
                     catch (Exception ex)
                     {
