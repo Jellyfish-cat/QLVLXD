@@ -7,20 +7,16 @@
       "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\form\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|D:\\WinFormsApp1\\form\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\winformsapp1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:winformsapp1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|D:\\WinFormsApp1\\form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\form\\banhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +33,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|D:\\WinFormsApp1\\form\\aboutbox1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\aboutbox1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|D:\\WinFormsApp1\\form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,20 +66,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WinFormsApp1.csproj",
+              "DocumentMoniker": "D:\\WinFormsApp1\\WinFormsApp1.csproj",
+              "RelativeDocumentMoniker": "WinFormsApp1.csproj",
+              "ToolTip": "D:\\WinFormsApp1\\WinFormsApp1.csproj",
+              "RelativeToolTip": "WinFormsApp1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-04T08:25:36.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\WinFormsApp1\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\WinFormsApp1\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-04T08:25:24.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Main2.cs",
               "DocumentMoniker": "D:\\WinFormsApp1\\Form\\Main2.cs",
               "RelativeDocumentMoniker": "Form\\Main2.cs",
               "ToolTip": "D:\\WinFormsApp1\\Form\\Main2.cs",
               "RelativeToolTip": "Form\\Main2.cs",
-              "ViewState": "AgIAAFcCAAAAAAAAAAAAAF4CAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAG8CAAAAAAAAAAAQwHkCAACaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-04T07:57:34.224Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\WinFormsApp1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -83,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "frmHoaDon_ChiTiet.cs",
               "DocumentMoniker": "D:\\WinFormsApp1\\Form\\frmHoaDon_ChiTiet.cs",
               "RelativeDocumentMoniker": "Form\\frmHoaDon_ChiTiet.cs",
@@ -96,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "frmHoaDon_ChiTiet.cs [Design]",
               "DocumentMoniker": "D:\\WinFormsApp1\\Form\\frmHoaDon_ChiTiet.cs",
               "RelativeDocumentMoniker": "Form\\frmHoaDon_ChiTiet.cs",
@@ -108,13 +142,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "BanHang.cs",
               "DocumentMoniker": "D:\\WinFormsApp1\\Form\\BanHang.cs",
               "RelativeDocumentMoniker": "Form\\BanHang.cs",
               "ToolTip": "D:\\WinFormsApp1\\Form\\BanHang.cs",
               "RelativeToolTip": "Form\\BanHang.cs",
-              "ViewState": "AgIAANQBAAAAAAAAAIAwwKcBAAByAAAAAAAAAA==",
+              "ViewState": "AgIAAOkBAAAAAAAAAAD4v6cBAAByAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-04T07:45:39.517Z",
               "EditorCaption": ""
@@ -133,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "BanHang.cs [Design]",
               "DocumentMoniker": "D:\\WinFormsApp1\\Form\\BanHang.cs",
               "RelativeDocumentMoniker": "Form\\BanHang.cs",
@@ -145,20 +179,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "AboutBox1.cs",
               "DocumentMoniker": "D:\\WinFormsApp1\\Form\\AboutBox1.cs",
               "RelativeDocumentMoniker": "Form\\AboutBox1.cs",
               "ToolTip": "D:\\WinFormsApp1\\Form\\AboutBox1.cs",
               "RelativeToolTip": "Form\\AboutBox1.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAApwBEAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAArwAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-04T07:40:43.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "AboutBox1.cs [Design]",
               "DocumentMoniker": "D:\\WinFormsApp1\\Form\\AboutBox1.cs",
               "RelativeDocumentMoniker": "Form\\AboutBox1.cs",

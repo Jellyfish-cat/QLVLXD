@@ -217,7 +217,6 @@ namespace WinFormsApp1
                     }
                 }
             }
-
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -570,6 +569,7 @@ namespace WinFormsApp1
             var rawVersion = Application.ProductVersion;
             var match = Regex.Match(rawVersion, @"\d+\.\d+\.\d+");
             var currentVersion = match.Success ? match.Value : "0.0.0";
+            MessageBox.Show(currentVersion);
             // Loại bỏ tiền tố 'v' nếu có trong phiên bản GitHub
             latestVersion = latestVersion?.TrimStart('v');
 
@@ -631,7 +631,7 @@ namespace WinFormsApp1
                             progressForm.Invoke(() => statusLabel.Text = "Đang tải bản cập nhật...");
                             string zipPath = "Update.zip";
                             using var client = new HttpClient();
-                            var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/archive/refs/tags/1.0.2.zip");
+                            var data = await client.GetByteArrayAsync("https://github.com/Jellyfish-cat/QLVLXD/releases/download/1.0.2/QLVLXD-1.0.2.zip");
                             await File.WriteAllBytesAsync(zipPath, data);
 
                             // Giải nén
@@ -642,12 +642,22 @@ namespace WinFormsApp1
 
                             // Khởi động lại
                             progressForm.Invoke(() => statusLabel.Text = "Khởi động lại ứng dụng...");
-                            await Task.Delay(1000);
+                            await Task.Delay(3000);
 
                             progressForm.Invoke(() => progressForm.Close());
 
-                            Process.Start("Updater.exe"); // Dùng Updater trung gian
+                            var startInfo = new ProcessStartInfo
+                            {
+                                FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Updater.exe"),
+                                UseShellExecute = true
+                            };
+                            Process.Start(startInfo);
+
+                            // Delay ngắn giúp đảm bảo quá trình khởi chạy đã bắt đầu
+                            await Task.Delay(500);
+
                             Application.Exit();
+
                         }
                         catch (Exception ex)
                         {

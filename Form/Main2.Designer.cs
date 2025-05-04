@@ -103,14 +103,14 @@
             // 
             mnuDangNhap.Name = "mnuDangNhap";
             mnuDangNhap.ShortcutKeyDisplayString = "";
-            mnuDangNhap.Size = new Size(224, 26);
+            mnuDangNhap.Size = new Size(183, 26);
             mnuDangNhap.Text = "&Đăng Nhập...";
             mnuDangNhap.Click += mnuDangNhap_Click;
             // 
             // mnuDangXuat
             // 
             mnuDangXuat.Name = "mnuDangXuat";
-            mnuDangXuat.Size = new Size(224, 26);
+            mnuDangXuat.Size = new Size(183, 26);
             mnuDangXuat.Text = "Đăng &Xuất";
             mnuDangXuat.Click += mnuDangXuat_Click;
             // 
@@ -118,7 +118,7 @@
             // 
             mnuThoat.Name = "mnuThoat";
             mnuThoat.ShortcutKeys = Keys.Alt | Keys.F4;
-            mnuThoat.Size = new Size(224, 26);
+            mnuThoat.Size = new Size(183, 26);
             mnuThoat.Text = "&Thoát";
             mnuThoat.Click += mnuThoat_Click;
             // 
@@ -552,7 +552,7 @@
             // btnThoat
             // 
             btnThoat.BackColor = Color.SteelBlue;
-            btnThoat.ForeColor = Color.Red;
+            btnThoat.ForeColor = Color.Transparent;
             btnThoat.Image = (Image)resources.GetObject("btnThoat.Image");
             btnThoat.Location = new Point(3, 993);
             btnThoat.Name = "btnThoat";
