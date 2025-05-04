@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|d:\\winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|D:\\WinFormsApp1\\form\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|solutionrelative:form\\main2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{931B0082-46B0-48F9-B3F5-0962A0E2DE21}|WinFormsApp1.csproj|D:\\WinFormsApp1\\form\\frmhoadon_chitiet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -61,13 +61,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAEYNAAAAAAAAAAAewFQNAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAEANAAAAAAAAAAAewFQNAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-05-04T03:43:57.27Z"
+              "WhenOpened": "2025-05-04T03:43:57.27Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -77,21 +78,22 @@
               "RelativeDocumentMoniker": "Form\\Main2.cs",
               "ToolTip": "D:\\WinFormsApp1\\Form\\Main2.cs",
               "RelativeToolTip": "Form\\Main2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8CAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAC4CAAAAAAAAAAAAADoCAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-04T03:24:31.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Main2.cs [Design]",
               "DocumentMoniker": "D:\\WinFormsApp1\\Form\\Main2.cs",
               "RelativeDocumentMoniker": "Form\\Main2.cs",
               "ToolTip": "D:\\WinFormsApp1\\Form\\Main2.cs [Design]",
               "RelativeToolTip": "Form\\Main2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T03:24:27.313Z"
+              "WhenOpened": "2025-05-04T03:24:27.313Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -131,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\WinFormsApp1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -163,7 +165,8 @@
               "ToolTip": "D:\\WinFormsApp1\\Form\\frmHoaDon_ChiTiet.cs [Design]",
               "RelativeToolTip": "Form\\frmHoaDon_ChiTiet.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T16:07:58.61Z"
+              "WhenOpened": "2025-05-03T16:07:58.61Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",

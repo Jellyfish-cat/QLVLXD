@@ -11,6 +11,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Data;
@@ -566,8 +567,9 @@ namespace WinFormsApp1
         {
             var updateService = new UpdateService();
             var latestVersion = await updateService.GetLatestVersionFromGitHub();
-            var currentVersion = Application.ProductVersion.Split('#')[0];
-            MessageBox.Show(currentVersion, "");
+            var rawVersion = Application.ProductVersion;
+            var match = Regex.Match(rawVersion, @"\d+\.\d+\.\d+");
+            var currentVersion = match.Success ? match.Value : "0.0.0";
             // Loại bỏ tiền tố 'v' nếu có trong phiên bản GitHub
             latestVersion = latestVersion?.TrimStart('v');
 
